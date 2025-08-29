@@ -1,12 +1,22 @@
-version: "3.9"
 
 services:
   jenkins:
     build: ./Jenkins
     container_name: jenkins
     ports:
-      - "8080:8080"   # Jenkins UI
-      - "50000:50000" # Conexão com agentes
+      - "8080:8080"
+      - "50000:50000" 
     volumes:
       - ./Jenkins/jenkins_home:/var/jenkins_home
 
+  terraform:
+    build: ./Terraform
+    container_name: terraform_container
+    volumes:
+      - ./Terraform/workspace:/workspace
+      - terraform_state:/workspace/state
+    working_dir: /workspace
+    tty: true
+
+volumes:
+  terraform_state:
