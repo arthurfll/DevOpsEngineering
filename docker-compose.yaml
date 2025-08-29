@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  jenkins:
+    build: ./Jenkins
+    container_name: jenkins
+    ports:
+      - "8080:8080"   # Jenkins UI
+      - "50000:50000" # Conexão com agentes
+    volumes:
+      - ./Jenkins/jenkins_home:/var/jenkins_home
+

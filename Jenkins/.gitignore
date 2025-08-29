@@ -1,0 +1,13 @@
+
+secrets
+users
+jobs
+war
+.cache
+.java
+logs
+*.log
+secret.key
+secret.key.not-so-secret
+
+
