@@ -1,11 +1,11 @@
 
 services:
   jenkins:
-    build: ./Jenkins
+    build: ./CI-CD/Jenkins
     container_name: jenkins
     ports:
       - "8080:8080"
       - "50000:50000" 
     volumes:
-      - ./Jenkins/jenkins_home:/var/jenkins_home
+      - ./CI-CD/Jenkins/jenkins_home:/var/jenkins_home
 
